@@ -23,12 +23,14 @@
   </head>
 
   <body>
-    <header>
-      <h1>Eventz</h1>
+    <header class="p-2 bg-blue-500">
+      <%= image_tag("logo.png") %>
     </header>
-    <%= yield %>
-    <footer>
-      <p>Made by <a href="https://www.jeanpaulgiraldo.com">Jean Paul</a></p>
+    <main class="container mx-auto mt-10 px-5 flex">
+      <%= yield %>
+    </main>
+    <footer class="bg-gray-700 mt-5 p-10 text-center">
+      <p class="text-lg text-white">Made by <a href="https://www.jeanpaulgiraldo.com">Jean Paul</a></p>
     </footer>
   </body>
 </html>

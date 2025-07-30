@@ -1,16 +1,20 @@
-
-<ul>
+<div class="flex flex-col">
   <% @events.each do |event| %>
-    <li>
-      <strong><%= event.name %></strong>
-      in <%= event.location %>:
-      <%= price(event) %>
-    </li>
-    <p>
-      <%= truncate(event.description, { length: 35, separator: ' '}) %>
-    </p>
-    <p>
-      <%= day_and_time(event) %>
-    </p>
+    <section class="w-lg flex flex-row items-center justify-between mb-4 p-4 border-b-1 border-b-gray-300">
+      <div>
+        <h2 class="font-semibold text-2xl">
+          <%= event.name %>
+          </h2>
+        <h3 class="text-gray-500 decorat">
+          <em><%= day_and_time(event) %> in <%= event.location %></em>
+        </h3>
+        <p class="mt-4">
+          <%= truncate(event.description, { length: 35, separator: ' '}) %>
+        </p>
+      </div>
+      <span class="rounded-sm bg-amber-400 px-2 py-1 text-small font-semibold text-white shadow-xs">
+        <%= price(event) %>
+      </span>
+    </section>
   <% end %>
-</ul>
+</div>
