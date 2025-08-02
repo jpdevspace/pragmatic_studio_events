@@ -2,10 +2,10 @@
   <% @events.each do |event| %>
     <section class="w-lg flex flex-row items-center justify-between mb-4 p-4 border-b-1 border-b-gray-300">
       <div>
-        <h2 class="font-semibold text-2xl text-blue-500 hover:text-blue-400 underline">
+        <h2 class="font-semibold text-2xl text-blue-500 cursor-pointer hover:text-blue-400 hover:underline">
           <%= link_to event.name, event %>
         </h2>
-        <h3 class="text-gray-500 decorat">
+        <h3 class="text-gray-500">
           <em><%= day_and_time(event) %> in <%= event.location %></em>
         </h3>
         <p class="mt-4">
