@@ -27,6 +27,13 @@ class EventsController < ApplicationController
     redirect_to @event
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    # common to see the events_url in the destroy
+    redirect_to events_url, status: :see_other
+  end
+
   private
     def event_params
       params.require(:event).
