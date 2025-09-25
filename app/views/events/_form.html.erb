@@ -1,0 +1,32 @@
+      <%= form_with(model: @event) do |form| %>
+  <%= form.label :name, { class: "block w-full mt-4 text-sm/6 font-medium text-gray-900"} %>
+  <div class="mt-2">
+    <%= form.text_field :name, { class: "block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" } %>
+  </div>
+  <%= form.label :description, { class: "block w-full mt-4 text-sm/6 font-medium text-gray-900"} %>
+  <div class="mt-2">
+    <%= form.text_area :description, rows: 5, class: "block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" %>
+  </div>
+  <%= form.label :location, { class: "block w-full mt-4 text-sm/6 font-medium text-gray-900"} %>
+  <div class="mt-2">
+    <%= form.text_field :location, { class: "block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" } %>
+  </div>
+  <%= form.label :price, { class: "block w-full mt-4 text-sm/6 font-medium text-gray-900"} %>
+  <div class="mt-2">
+    <%= form.number_field :price, { class: "block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" } %>
+  </div>
+  <%= form.label :starts_at, { class: "block w-full mt-4 text-sm/6 font-medium text-gray-900"} %>
+  <div class="mt-2 flex flex-row gap-x-2">
+    <%= form.datetime_select :starts_at,
+            { 
+              start_year: 1900,
+              end_year: 2030,
+              ampm: true
+            }, 
+            { 
+              class: "block rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+            }
+          %>
+  </div>
+  <%= form.submit class: "mt-6 rounded-sm bg-amber-400 px-2 py-1 text-small font-semibold text-white shadow-xs cursor-pointer" %>
+<% end %>
